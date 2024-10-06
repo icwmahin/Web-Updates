@@ -1,0 +1,526 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Body and Font */
+body {
+  overflow-x: hidden;
+  font-family: "Orbitron", sans-serif;
+  background: linear-gradient(135deg, #0a0b1a 0%, #1e1e2d 100%);
+  color: white;
+}
+
+/* Header Styling */
+header {
+  position: fixed;
+  width: 100%;
+  background-color: #0000002d;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.logo a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      135deg,
+      rgba(15, 15, 25, 0.8),
+      rgba(20, 20, 40, 0.8)
+    ),
+    url("../images/bg-i.jpeg") no-repeat center center/cover;
+}
+#line-hr {
+  height: 0.2px;
+  width: 80%;
+  margin: 0 auto;
+  color: #1e1e2d;
+}
+.hero-content {
+  text-align: center;
+}
+#about {
+  border: 1px solid #ffffff5d;
+  font-size: larger;
+  margin: 1rem 2rem;
+  text-align: center;
+}
+#about > p {
+  text-align: justify;
+  font-size: 16px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#about > ul {
+  list-style-type: disc;
+  color: #00eeff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#about > ul > li {
+  margin: 2rem;
+}
+
+.sub-text {
+  text-align: center !important;
+  color: #769bac;
+}
+.glow-text {
+  font-size: 3rem;
+  text-shadow: 0 0 15px #00eeff;
+}
+
+.btn-glass {
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: #ffffff1a;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+.why-us {
+  width: 100px;
+}
+.min-btn {
+  width: 40%;
+  margin-top: 1rem;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+/* Services and Portfolio */
+.services {
+  display: flex;
+  height: auto;
+  padding: 50px 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+.services p {
+  text-align: justify;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.services h3 {
+  margin: 1em;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+}
+.portfolio-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.portfolio-item {
+  border: 0.5px solid white;
+  text-align: center;
+}
+.portfolio-item img {
+  border: 0.2px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 25rem;
+  height: 25rem !important;
+  margin: 1.5rem;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Contact Form */
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+#contact-form {
+  margin-left: 15%;
+}
+.contact button {
+  width: 100%;
+  padding: 15px;
+  background: rgba(92, 80, 80, 0.2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+}
+.contant-image {
+  height: 400px;
+  width: auto;
+  margin-right: 15%;
+}
+.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .services,
+  .portfolio {
+    flex-direction: column;
+  }
+
+  .service,
+  .portfolio-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .contact {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact button {
+    margin-top: 20px;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .min-btn {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .logo a {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2px;
+  }
+
+  .hero {
+    padding: 20px;
+  }
+
+  .glow-text {
+    font-size: 2rem;
+  }
+
+  .btn-glass {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+
+  #about > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about > ul > li {
+    margin: 10px 0;
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .portfolio {
+    padding: 20px;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  .contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .contact button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .contant-image {
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+
+  .min-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .logo a {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: absolute;
+    top: 70px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links li a {
+    font-size: 16px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 3px;
+  }
+
+  .hero {
+    padding: 40px;
+  }
+
+  .glow-text {
+    font-size: 2.5rem;
+  }
+
+  .btn-glass {
+    padding: 10px 25px;
+    font-size: 16px;
+  }
+
+  #about > ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about > ul > li {
+    margin: 15px 0;
+  }
+
+  .services {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .services h3 {
+    font-size: 20px;
+  }
+
+  .portfolio {
+    padding: 40px;
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .contact {
+    flex-direction: column;
+    padding: 40px;
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .contact button {
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .contant-image {
+    height: 250px;
+    width: auto;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  .min-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+}
