@@ -1,5 +1,4 @@
-function add(a, b) {
+let sum = function (a, b) {
   return a + b;
-}
-
-console.log(add(a, b));
+};
+console.log(sum(1, 5));
