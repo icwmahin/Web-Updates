@@ -1,4 +1,6 @@
-let sum = function (a, b) {
-  return a + b;
-};
-console.log(sum(1, 5));
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
