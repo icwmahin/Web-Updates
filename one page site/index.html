@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header id="header">
+        <div class="navigation">
+            <nav>
+                <img class="logo-image" src="https://cdn.pixabay.com/photo/2020/08/05/13/11/eco-5465429_640.png"
+                    alt="logo">
+                <ul>
+                    <li><a href="#header">home</a></li>
+                    <li><a href="#services">services</a></li>
+                    <li><a href="#price-section">price</a></li>
+                    <li><a href="#about">about us</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </nav>
+            <div class="content">
+                <h1>Hello world!</h1>
+                <h3>Welcome to My website</h3>
+                <p>Custom Websites for Small Businesses | WordPress, HTML, CSS, JavaScript | cPanel & Elementor
+                    Specialist</p>
+                <button class="contact" type="submit"><a href="#contact">Contact Us</a></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <div id="about" class="about">
+        <div class="aboutContent">
+            <h1 class="aboutHeading">About Us</h1>
+            <p class="aboutText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugiat ipsa beatae id dolores a
+                natus mollitia culpa animi veritatis. Odio laboriosam facere at, quod aperiam minus? Nesciunt, ex magni.
+            </p>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2024/03/09/16/59/typewriter-8622984_640.jpg" alt="aboutImage"
+            class="aboutImage">
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects" class="projects">
+        <img src="https://cdn.pixabay.com/photo/2024/02/05/10/48/bird-8554204_640.jpg" alt="projectsImage"
+            class="projectsImage">
+        <div class="projectsContent">
+            <h1 class="projectsHeading">Our Projects</h1>
+            <p class="projectsText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus fugiat ipsa beatae id dolores a
+                natus mollitia culpa animi veritatis. Odio laboriosam facere at, quod aperiam minus? Nesciunt, ex magni.
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="hero">
+        <h1>Services</h1>
+        <div class="boxes">
+            <div class="hero-box">
+                <img src="https://cdn.pixabay.com/photo/2023/11/28/21/35/ural-owl-8418249_1280.jpg" alt="service-image"
+                    class="service-image">
+                <h1>Service 1</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="service-button">
+                    <a href="#">Read More!</a>
+                </button>
+            </div>
+            <div class="hero-box">
+                <img src="https://cdn.pixabay.com/photo/2024/09/30/10/43/flowers-9085492_640.jpg" alt="service-image"
+                    class="service-image">
+                <h1>Service 2</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="service-button">
+                    <a href="#">Read More!</a>
+                </button>
+            </div>
+            <div class="hero-box">
+                <img src="https://cdn.pixabay.com/photo/2023/11/01/11/07/path-8357152_640.jpg" alt="service-image"
+                    class="service-image">
+                <h1>Service 3</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <button class="service-button">
+                    <a href="#">Read More!</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <h1 class="testimonialHeading">Testimonial</h1>
+    <div class="testimonial-container">
+        <div class="testimonial">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNu31w73dqZmj9OY_ZOXiCmqTUBWav15pokg&s"
+                alt="Client 1" class="client-img">
+            <p class="client-review">"This service was amazing! It exceeded all my expectations."</p>
+            <p class="client-name">- John Doe</p>
+        </div>
+        <div class="testimonial">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNu31w73dqZmj9OY_ZOXiCmqTUBWav15pokg&s"
+                alt="Client 2" class="client-img">
+            <p class="client-review">"Highly recommend this company. Professional and reliable."</p>
+            <p class="client-name">- Jane Smith</p>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section id="price-section" class="price-section">
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h2>Basic</h2>
+                <p class="price">$19/month</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+                <button>Choose Plan</button>
+            </div>
+            <div class="pricing-card">
+                <h2>Premium</h2>
+                <p class="price">$39/month</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+                <button>Choose Plan</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <form action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2022 Your Website Name. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scroll-to-top Button -->
+    <a href="#header"><img class="upImage"
+            src="https://w7.pngwing.com/pngs/720/909/png-transparent-up-logo-illustration-button-icon-up-arrow-angle-web-design-text-thumbnail.png"
+            alt="up"></a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

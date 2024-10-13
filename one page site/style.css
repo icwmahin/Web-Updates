@@ -1,0 +1,594 @@
+:root {
+    --color-primary: #ac947f;
+    --color-secondary: #383f41;
+    --color-tertiary: #53595d;
+    --color-quaternary: #4b504e;
+    --color-quinary: #60666253;
+    --color-senary: #989994;
+    --color-septenary: #a2a496;
+    --color-octonary: #101313;
+    --color-nonary: #81837c;
+    --color-denary: #c9bea5;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-200deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+body {
+    background-color: var(--color-octonary);
+}
+
+.logo-image {
+    padding: .5rem;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+header {
+    animation: slideDown 1s ease-in-out;
+    background: linear-gradient(#10131344, #10131344), url(background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+.navigation {
+    padding: 1px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+nav {
+    width: 60%;
+    border: 1px solid transparent;
+    margin: 1rem auto 1rem auto;
+    padding: 0rem .5rem 0rem .5rem;
+    border-radius: 14px;
+    box-shadow: 2px 2px 12px var(--color-octonary)5d;
+    background-color: var(--color-nonary);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    list-style: none;
+    margin-right: 1rem;
+}
+
+ul li a {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-decoration: none;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 70vh;
+    animation: zoomIn 1s ease-in-out;
+}
+
+.content h1 {
+    font-size: 8em;
+}
+
+.content h1,
+h3,
+p {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+}
+
+.contact {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 1rem;
+    background: linear-gradient(#10131344, #10131344);
+    transition: all .75s;
+}
+
+.contact a {
+    color: #fff;
+    padding: .5rem;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.boxes {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+}
+
+/* * about us */
+.about {
+    margin: 2rem;
+    color: white;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: rotateIn 1s ease-in-out;
+}
+
+.aboutText {
+    color: var(--color-denary);
+}
+
+.aboutImage {
+    border-radius: 5px;
+}
+
+.aboutContent {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* * projects */
+.projects {
+    margin: 2rem;
+    color: white;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: slideUp 1s ease-in-out;
+}
+
+.projectsText {
+    color: var(--color-denary);
+}
+
+.projectsImage {
+    border-radius: 5px;
+}
+
+.projectsContent {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.hero>h1 {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    padding: .5rem;
+    margin-bottom: 2rem;
+}
+
+.hero {
+    animation: slideDown .75s ease-in-out;
+    margin: 2rem;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero-box {
+    background-color: var(--color-quinary);
+    color: #fff;
+    border-radius: 3px;
+    box-shadow: 2px 2px 12px var(--color-quinary);
+    width: 400px;
+    padding: 1rem;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounceIn 0.6s ease-in-out;
+}
+
+.service-button {
+    margin-top: .6rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--color-primary);
+    padding: .5rem;
+}
+
+.service-button a {
+    padding: .5rem;
+    color: #fff;
+    padding: .5rem;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.service-image {
+    border-radius: 24px;
+    height: 300px;
+    width: 400px;
+    padding: .9rem;
+    transition: .75s;
+}
+
+/* ?testimonials  */
+.testimonialHeading {
+    margin-top: 3rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    padding: .5rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: #ffffff1b;
+    padding: 20px;
+    margin: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial {
+    width: 30%;
+    text-align: center;
+    margin: 20px 0;
+    animation: slideUp 1s ease-in-out;
+}
+
+.client-img {
+    width: 70px;
+    height: 70px;
+    padding: .5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.client-review {
+    font-style: italic;
+    color: #848484;
+}
+
+.client-name {
+    font-weight: bold;
+    color: #5e5e5e;
+}
+
+/* ? pricing section  */
+.pricing-table {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.price-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 5px dashed var(--color-senary);
+    background-color: var(--color-quaternary)43;
+    padding: .5rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+}
+
+.pricing-card {
+    background: var(--color-tertiary);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--color-octonary)1a;
+    padding: 20px;
+    text-align: center;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.pricing-card h2 {
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.price {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    margin: 5px 0;
+    color: var(--color-octonary);
+    font-weight: bolder;
+}
+
+.pricing-card button {
+    margin: .4rem;
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pricing-card button:hover {
+    background-color: #0056b3;
+}
+
+.price-section {
+    padding: 2rem;
+    background: linear-gradient(35deg, var(--color-senary), var(--color-quinary), var(--color-quinary), var(--color-senary));
+}
+
+.contact-section {
+    width: 100%;
+    background-color: var(--color-octonary);
+    padding: 2rem;
+    text-align: center;
+    animation: slideUp 1s ease-in-out;
+}
+
+.contact-container {
+    background-color: var(--color-quinary);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-container h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--color-denary);
+}
+
+.contact-container label {
+    display: block;
+    margin: 0.5rem 0 0.2rem;
+    font-weight: bold;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-denary);
+    color: var(--color-quinary);
+    font-size: 1rem;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: var(--color-quaternary);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#up-button {
+    margin: 2rem;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: .2rem;
+    color: black;
+    background-color: white;
+}
+
+.upImage {
+    margin: 2rem;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    padding: .2rem;
+    color: black;
+    background-color: white;
+}
+
+
+/* Animation states */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start elements slightly below their original position */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* Element animates into its natural position */
+}
