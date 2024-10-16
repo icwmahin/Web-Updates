@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a2e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bio-container {
+    background-color: #0f0f1c;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 320px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #00aaff;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #00aaff;
+}
+
+.bio {
+    font-size: 16px;
+    color: #a6a6a6;
+    margin-bottom: 25px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.bio-link {
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.bio-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 170, 255, 0.6);
+}
+
+.icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #00aaff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.light-theme .bio-link {
+    background: linear-gradient(90deg, #007bff, #00aaff);
+    color: white;
+}
+
+.light-theme .name {
+    color: #007bff;
+}
+
+.light-theme .bio {
+    color: #555;
+}
+
+
+#toggle {
+    border-radius: 50%;
+    border: none;
+    padding: .5rem;
+    width: 50px;
+    height: 50px;
+    margin: 1rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+}
