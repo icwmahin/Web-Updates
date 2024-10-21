@@ -1,128 +1,84 @@
-// DOM Elements
-const loadingOverlay = document.getElementById("loading-overlay");
-const modal = document.getElementById("project-modal");
-const modalCloseBtn = document.querySelector(".close-btn");
-const projectItems = document.querySelectorAll(".project-item");
-const modalTitle = document.getElementById("project-title");
-const modalDescription = document.getElementById("project-description");
-const modalImage = document.getElementById("project-images img");
-const liveDemoLink = document.getElementById("live-demo");
-const githubLink = document.getElementById("github-link");
-
-// Project Data
-const projects = {
-  project1: {
-    title: "3D Artwork",
-    description:
-      "A stunning 3D art piece rendered in real-time using Three.js.",
-    image: "project1-detail.jpg",
-    liveDemo: "#",
-    github: "#",
-  },
-  // Add more projects here
-};
-
-// Event Listeners
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize the 3D Scene
-  initThreeJS();
+// Initialize the scene, camera, and renderer
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
+);
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.getElementById("threejs-canvas"),
+  alpha: true,
 });
+renderer.setSize(window.innerWidth, window.innerHeight);
 
-// Show Modal on Project Click
-projectItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    const projectId = item.getAttribute("data-project");
-    const project = projects[projectId];
+// Add lights to the scene
+const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+scene.add(ambientLight);
+const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+pointLight.position.set(10, 10, 10);
+scene.add(pointLight);
 
-    modalTitle.textContent = project.title;
-    modalDescription.textContent = project.description;
-    modalImage.src = project.image;
-    liveDemoLink.href = project.liveDemo;
-    githubLink.href = project.github;
+// Create shapes for the gallery
+const shapes = [];
+const shapeColors = [
+  0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 0xff00ff, 0x00ffff,
+];
 
-    modal.style.display = "flex";
+for (let i = 0; i < 6; i++) {
+  const geometry = new THREE.BoxGeometry(1, 1, 1); // You can change this to SphereGeometry or others
+  const material = new THREE.MeshStandardMaterial({ color: shapeColors[i] });
+  const shape = new THREE.Mesh(geometry, material);
+  shape.position.x = i * 2 - 5; // Adjust position for spacing
+  shape.userData = { originalColor: shapeColors[i] }; // Store the original color
+  scene.add(shape);
+  shapes.push(shape);
+}
+
+// Raycaster for mouse hover effects
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+// Mouse move event listener
+window.addEventListener("mousemove", (event) => {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects(shapes);
+
+  // Reset all shapes to original color
+  shapes.forEach((shape) => {
+    shape.material.color.set(shape.userData.originalColor);
   });
-});
 
-// Close Modal
-modalCloseBtn.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
-// Close Modal on Outside Click
-window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
+  // Change color of the intersected shape
+  if (intersects.length > 0) {
+    intersects[0].object.material.color.set(0xffffff); // Change color on hover
   }
 });
 
-// Three.js 3D Scene
-function initThreeJS() {
-  try {
-    // Set up the scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({
-      canvas: document.getElementById("threejs-canvas"),
-    });
+// Camera position
+camera.position.z = 5;
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
 
-    // Add a light source
-    const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-    scene.add(ambientLight);
+  shapes.forEach((shape, index) => {
+    shape.rotation.x += 0.01 + index * 0.005; // Rotate each shape at different speeds
+    shape.rotation.y += 0.01 + index * 0.005; // Rotate each shape at different speeds
+  });
 
-    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
-    pointLight.position.set(10, 10, 10);
-    scene.add(pointLight);
-
-    // Example: Add a rotating 3D cube
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x00bfff });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    camera.position.z = 5;
-
-    // Animation Loop
-    function animate() {
-      requestAnimationFrame(animate);
-
-      // Rotate the cube
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-
-      // Render the scene from the perspective of the camera
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // Hide the loading overlay after the scene is fully set up
-    hideLoadingOverlay();
-
-    // Handle Window Resize
-    window.addEventListener("resize", () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-    });
-  } catch (error) {
-    console.error("Error initializing Three.js scene:", error);
-    // Optionally, show an error message to the user if scene fails to load
-  }
+  renderer.render(scene, camera);
 }
 
-// Hide the loading overlay
-function hideLoadingOverlay() {
-  loadingOverlay.style.opacity = "0";
-  setTimeout(() => {
-    loadingOverlay.style.visibility = "hidden";
-  }, 500); // Wait for the fade-out transition
-}
+// Event listener for window resize
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// Start animation
+animate();
