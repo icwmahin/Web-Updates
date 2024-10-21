@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3D Art Gallery Experience</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Main CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Icons -->
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Explore a unique interactive 3D gallery showcasing artworks, projects, and more."
+    />
+    <meta
+      name="keywords"
+      content="3D gallery, interactive, art, portfolio, web development, three.js"
+    />
+  </head>
+  <body>
+    <!-- Full-Screen Overlay Loader -->
+    <div id="loading-overlay">
+      <div class="spinner"></div>
+      <p>Loading 3D Gallery...</p>
+    </div>
+
+    <!-- Navigation Bar with Sticky Effect -->
+    <header id="navbar">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#explore" class="btn-primary">Explore 3D Gallery</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <!-- Mobile Menu Icon -->
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the 3D Art Gallery</h1>
+        <p>
+          Immerse yourself in an interactive 3D environment showcasing stunning
+          artworks and projects.
+        </p>
+        <a href="#explore" class="btn-primary">Start Exploring</a>
+      </div>
+      <div class="hero-bg"></div>
+      <!-- Background Image/Video -->
+    </section>
+
+    <!-- 3D Gallery Section -->
+    <section id="gallery">
+      <div class="gallery-container">
+        <h2>Our Collection</h2>
+        <div id="canvas-container">
+          <canvas id="threejs-canvas"></canvas>
+          <!-- 3D Scene Rendered Here -->
+        </div>
+
+        <!-- Project Thumbnails -->
+        <div class="project-thumbnails">
+          <!-- Dynamic Thumbnails Generated via JS -->
+          <!-- Example Static Thumbnail -->
+          <div class="project-item" data-project="project1">
+            <img src="project1-thumb.jpg" alt="Project 1" />
+            <div class="project-info">
+              <h3>Project 1</h3>
+              <p>Short Description of Project 1</p>
+            </div>
+          </div>
+          <!-- More Projects... -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="about-content">
+        <h2>About the Gallery</h2>
+        <p>
+          This gallery showcases a diverse collection of digital art and
+          creative projects, all displayed in a stunning 3D environment built
+          using cutting-edge web technologies.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="contact-content">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Project Modal (For Showing Project Details) -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-body">
+          <h2 id="project-title">Project Title</h2>
+          <p id="project-description">Project description goes here...</p>
+          <div class="project-links">
+            <a href="#" id="live-demo" class="btn-primary">View Demo</a>
+            <a href="#" id="github-link" class="btn-secondary">GitHub Repo</a>
+          </div>
+          <div id="project-images">
+            <!-- Dynamic Project Images Loaded via JavaScript -->
+            <img src="project-detail1.jpg" alt="Project Detail 1" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; 2024 3D Art Gallery. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="app.js"></script>
+    <!-- Main JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Three.js -->
+  </body>
+</html>
